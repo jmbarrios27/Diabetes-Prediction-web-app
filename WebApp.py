@@ -5,6 +5,8 @@ from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier
 from PIL import Image
 import streamlit as st
 import seaborn as sns
+import pickle
+
 # Create a title
 st.write("""
 # Diabetes Detection
@@ -12,8 +14,6 @@ Detect if someone has diabetes using machine learning
 """)
 
 # open and display an image in the web app
-image = Image.open('D:\\pythonProject\\diabetesimage.png')
-st.image(image, caption='ML', use_column_width=True)
 
 # Get Data
 data = pd.read_csv('D:\\pythonProject\\diabetes.csv', delimiter=',')
@@ -126,4 +126,8 @@ prediction = RandomForestClassifier.predict(user_input)
 # # Set a subheader and display the classification
 st.subheader('Classification: ')
 st.write(prediction)
+
+# Saving model 
+filename = 'diabetes_prediction.pkl'
+pickle.dump(RandomForestClassifier, open(filename, 'wb'))
 
