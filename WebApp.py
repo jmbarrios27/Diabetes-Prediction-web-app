@@ -16,7 +16,8 @@ Detect if someone has diabetes using machine learning
 # open and display an image in the web app
 
 # Get Data
-data = pd.read_csv('D:\\pythonProject\\diabetes.csv', delimiter=',')
+url = 'https:\\raw.githubusercontent.com\\jmbarrios27\\Diabetes-Prediction-web-app\\main\\diabetes.csv'
+data = pd.read_csv(url, delimiter=',')
 # Set a subheader
 
 # Function to transform target variable
